@@ -17,6 +17,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 // import Servicemenu from './Componants/Servicemenu';
 import AdminLogin from './Admin/Login';
 import AdminDashboard from './Admin/Dashboard';
+import Doctor from './pages/Doctorpage';
+import DoctorForm from './Admin/Doctor';
 function App() {
   return (
     <Router>
@@ -31,6 +33,7 @@ function App() {
         {/* <Route path="/bookappointment" element={<BookAppointment />} /> */}
         <Route path="/Login" element={<AdminLogin/>} />
         <Route path="/Dashboard" element={<AdminDashboard />} />
+        <Route path="Doctor" element={<DoctorForm />}  />
       </Routes>
        {/* <Banner /> */}
        {/* <BookAppointment /> */}
