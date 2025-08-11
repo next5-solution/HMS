@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import { useNavigate } from "react-router-dom";
 const DoctorForm = () => {
   const [doctor, setDoctor] = useState({
     name: "",
@@ -9,6 +9,7 @@ const DoctorForm = () => {
     experience: "",
     address: "",
   });
+
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -27,6 +28,15 @@ const DoctorForm = () => {
       experience: "",
       address: "",
     });
+  };
+
+   const [Doctor, setDoctors] = useState([]);
+    const navigate = useNavigate();
+
+  const handleCancel = () => {
+
+    
+    navigate("/dashboard"); // Redirect to Dashboard page
   };
 
   return (
@@ -136,7 +146,15 @@ const DoctorForm = () => {
             Add Doctor
           </button>
         </div>
+        <button
+        onClick={handleCancel}
+        className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg transition"
+      >
+        Cancel
+      </button>
+
       </form>
+
     </div>
   );
 };
